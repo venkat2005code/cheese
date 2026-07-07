@@ -697,13 +697,13 @@ body.dark-theme .mobile-toggle-btn .bar {
 @media (min-width: 769px) {
   #theme-toggle,
   #rtl-toggle,
-  .btn-shop-cta {
+  .btn-order-platters {
     display: flex !important;
   }
 }
 
 /* Shop CTA Button in Header */
-.btn-shop-cta {
+.btn-order-platters {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -721,18 +721,18 @@ body.dark-theme .mobile-toggle-btn .bar {
   white-space: nowrap;
 }
 
-.btn-shop-cta:hover {
+.btn-order-platters:hover {
   background-color: var(--accent-light);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(139, 38, 62, 0.3);
 }
 
-body.dark-theme .btn-shop-cta {
+body.dark-theme .btn-order-platters {
   background-color: var(--accent-gold);
   color: #1c1512 !important;
 }
 
-body.dark-theme .btn-shop-cta:hover {
+body.dark-theme .btn-order-platters:hover {
   background-color: #d89b3d;
   box-shadow: 0 4px 12px rgba(229, 184, 91, 0.35);
 }
