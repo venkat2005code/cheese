@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="L'Aura Grazing - Premium Specialty Cheese & Charcuterie Board Caterer. Exquisite bespoke grazing tables, cheese platters, and custom boards for events, weddings, and gatherings.">
+  <meta name="keywords"
+    content="charcuterie caterer, cheese board catering, grazing tables, bespoke platters, artisanal cheese, party catering">
+  <meta name="author" content="L'Aura Grazing">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="L'Aura Grazing | Specialty Cheese & Charcuterie Caterer">
+  <meta property="og:description"
+    content="Bespoke grazing experiences and custom board curation for weddings, corporate events, and intimate gatherings.">
+  <meta property="og:image" content="c1.jpg">
+
+  <title>L'Aura Grazing | Specialty Cheese & Charcuterie Caterer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Leaflet Map CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-theme">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="#home-1" class="logo" id="logo-link">
+        <span class="logo-icon"><i class="fa-solid fa-cheese"></i></span>
+        <span class="logo-text">L'AURA <span class="logo-sub">GRAZING</span></span>
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item dropdown">
+            <a href="#home-1" class="nav-link dropdown-toggle" id="home-nav-link">
+              Home <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#home-1" class="dropdown-item" id="nav-home-1">Home 1</a></li>
+              <li><a href="#home-2" class="dropdown-item" id="nav-home-2">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#about" class="nav-link" id="nav-about">About Us</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link" id="nav-services">Platters</a></li>
+          <li class="nav-item"><a href="#gallery" class="nav-link" id="nav-gallery">Gallery</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link" id="nav-faq">FAQ</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" id="nav-contact">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile Menu Actions (Theme & RTL Toggles) -->
+        <div class="mobile-menu-actions">
+          <button id="theme-toggle-mobile" class="action-btn" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fas fa-moon theme-icon-dark"></i>
+            <i class="fas fa-sun theme-icon-light"></i>
+          </button>
+          <button id="rtl-toggle-mobile" class="action-btn text-toggle" title="Toggle Text Direction"
+            aria-label="Toggle Text Direction">
+            <span class="rtl-text">RTL</span>
+            <span class="ltr-text">LTR</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Action Utilities (Shop CTA, Theme, RTL, Mobile Menu) -->
+      <div class="header-actions">
+        <!-- Shop CTA Button -->
+        <a href="#services" class="btn btn-shop-cta" id="header-shop-btn">
+          <i class="fas fa-shopping-basket"></i> Shop Now
+        </a>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="action-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="fas fa-moon theme-icon-dark"></i>
+          <i class="fas fa-sun theme-icon-light"></i>
+        </button>
+
+        <!-- LTR/RTL Toggle -->
+        <button id="rtl-toggle" class="action-btn text-toggle" title="Toggle Text Direction"
+          aria-label="Toggle Text Direction">
+          <span class="rtl-text">RTL</span>
+          <span class="ltr-text">LTR</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" class="mobile-toggle-btn" aria-label="Open Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- APP VIEW CONTAINER (SPA) -->
+  <main id="app-container">
+
+    <!-- ==============================================
+         HOME 1 VIEW (CLASSIC & ELEGANT - 6 SECTIONS)
+         ============================================== -->
+    <div class="app-view active" id="view-home-1">
+      <!-- Section 1: Hero -->
+      <section class="hero-section" id="h1-hero">
+        <div class="hero-bg"
+          style="background-image: linear-gradient(to right, rgba(17, 12, 9, 0.95) 0%, rgba(17, 12, 9, 0.75) 55%, rgba(17, 12, 9, 0.3) 100%), url('c1.jpg');">
+        </div>
+        <div class="hero-content">
+          <span class="hero-subtitle">Artisanal Curation</span>
+          <h1 class="hero-title">Symphonies of Flavors in Every Board</h1>
+          <p class="hero-description">Award-winning specialty cheese and bespoke charcuterie catering designed to
+            elevate your celebrations, business milestones, and intimate gatherings.</p>
+          <div class="hero-actions-container">
+            <a href="#contact" class="btn btn-primary">Book Your Event</a>
+            <a href="#services" class="btn btn-secondary-hero">Explore Platters</a>
+          </div>
+        </div>
+        <div class="hero-scroll-down">
+          <a href="#h1-story"><i class="fas fa-chevron-down"></i></a>
+        </div>
+      </section>
+
+      <!-- Section 2: Story Preview / Philosophy -->
+      <section class="story-preview-section py-large" id="h1-story">
+        <div class="container grid grid-2-cols align-center gap-large">
+          <div class="story-image-wrapper">
+            <img src="c11.jpg" alt="Artisanal board preparation" class="img-fluid rounded-lg shadow-md border-gold">
+            <div class="badge-overlay">
+              <span class="badge-num">100%</span>
+              <span class="badge-text">Artisanal Sourcing</span>
+            </div>
+          </div>
+          <div class="story-text-content">
+            <span class="section-tag">Our Philosophy</span>
+            <h2 class="section-title">Crafted with Passion, Sourced with Integrity</h2>
+            <p class="lead">At L'Aura Grazing, we believe food is an art form that brings people together.</p>
+            <p>Every cheese wheel, slice of cured charcuterie, organic preserve, and sprig of herb is selected by our
+              master cheesemongers. We partner with local family-owned dairies and international award-winning farms to
+              create a sensory experience that lingers long after the last bite.</p>
+            <div class="story-features grid grid-2-cols gap-medium pt-small">
+              <div class="feature-item">
+                <i class="fa-solid fa-cheese feature-icon"></i>
+                <h4>Bespoke Selection</h4>
+                <p>Curated to suit your flavor preferences and dietary needs.</p>
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-leaf feature-icon"></i>
+                <h4>Organic Partners</h4>
+                <p>Fresh seasonal produce and organic locally-harvested honeys.</p>
+              </div>
+            </div>
+            <a href="#about" class="btn btn-primary mt-medium">Read More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Signature Showcase -->
+      <section class="signature-showcase-section py-large bg-subtle" id="h1-showcase">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag">Signature Platters</span>
+          <h2 class="section-title">Explore Our Signature Platters</h2>
+          <p>Hand-crafted platters combining rich cheeses, fine meats, fresh fruits, premium nuts, and custom garnishes.
+            Perfect for any occasion.</p>
+        </div>
+        <div class="container grid grid-3-cols gap-medium">
+          <!-- Platter 1 -->
+          <div class="board-card">
+            <div class="board-card-img-wrapper">
+              <img src="c2.jpg" alt="The Grand Alpine Graze Platter" class="board-card-img">
+              <span class="board-card-badge">Best Seller</span>
+            </div>
+            <div class="board-card-info">
+              <h3 class="board-title">The Grand Alpine Platter</h3>
+              <p class="board-desc">Nutty Gruyère, soft triple-cream Brie, dry-aged Prosciutto di Parma, sweet
+                honeycombs, and crisp artisanal flatbreads.</p>
+              <div class="board-footer">
+                <span class="board-price">From $125</span>
+                <a href="#services" class="btn btn-primary">Customize</a>
+              </div>
+            </div>
+          </div>
+          <!-- Platter 2 -->
+          <div class="board-card">
+            <div class="board-card-img-wrapper">
+              <img src="c3.jpg" alt="The Mediterranean Harvest Platter" class="board-card-img">
+            </div>
+            <div class="board-card-info">
+              <h3 class="board-title">The Mediterranean Platter</h3>
+              <p class="board-desc">Tangy marinated Feta, rich Manchego, artisanal Genoa salami, Kalamata olives, fresh
+                figs, and organic pistachios.</p>
+              <div class="board-footer">
+                <span class="board-price">From $140</span>
+                <a href="#services" class="btn btn-primary">Customize</a>
+              </div>
+            </div>
+          </div>
+          <!-- Platter 3 -->
+          <div class="board-card">
+            <div class="board-card-img-wrapper">
+              <img src="c4.jpg" alt="The Sweet Indulgence Platter" class="board-card-img">
+              <span class="board-card-badge">Premium Selection</span>
+            </div>
+            <div class="board-card-info">
+              <h3 class="board-title">The Sweet Indulgence Platter</h3>
+              <p class="board-desc">Truffle Pecorino, creamy Gorgonzola, Belgian dark chocolate truffles, organic
+                berries, and sweet apricot jam.</p>
+              <div class="board-footer">
+                <span class="board-price">From $155</span>
+                <a href="#services" class="btn btn-primary">Customize</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: How It Works - Redesigned -->
+      <section class="how-it-works-section py-large" id="h1-process"
+        style="background: linear-gradient(135deg, var(--bg-subtle) 0%, var(--bg-card) 100%);">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag">Catering Process</span>
+          <h2 class="section-title">The Journey to Your Perfect Platter</h2>
+          <p>We make organising catering for your events and celebrations completely effortless — from first call to
+            final garnish.</p>
+        </div>
+        <div class="container process-steps-wrapper">
+          <!-- Step 1 -->
+          <div class="process-step-item">
+            <div class="process-step-visual">
+              <div class="process-step-icon-ring">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <div class="process-connector"></div>
+            </div>
+            <div class="process-step-body bg-card rounded-lg shadow-md border-gold">
+              <span class="process-step-num">Step 01</span>
+              <h3 class="process-step-title">Consult &amp; Select</h3>
+              <p class="process-step-desc">Browse our artisanal platter menu or speak directly with our events team to
+                design a fully custom board — size, style, dietary needs, and theme all considered.</p>
+              <div class="process-step-tags flex gap-xs flex-wrap mt-xs">
+                <span class="process-tag"><i class="fas fa-phone-alt"></i> Free Consultation</span>
+                <span class="process-tag"><i class="fas fa-clock"></i> 20-Minute Call</span>
+              </div>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="process-step-item">
+            <div class="process-step-visual">
+              <div class="process-step-icon-ring">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <div class="process-connector"></div>
+            </div>
+            <div class="process-step-body bg-card rounded-lg shadow-md border-gold">
+              <span class="process-step-num">Step 02</span>
+              <h3 class="process-step-title">Artisanal Styling</h3>
+              <p class="process-step-desc">Our certified cheesemongers compositionally balance every element — flavour
+                pairings, cheese textures, seasonal fruits, cured meats, and botanical garnishes.</p>
+              <div class="process-step-tags flex gap-xs flex-wrap mt-xs">
+                <span class="process-tag"><i class="fas fa-certificate"></i> Certified Mongers</span>
+                <span class="process-tag"><i class="fas fa-leaf"></i> Seasonal Produce</span>
+              </div>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="process-step-item">
+            <div class="process-step-visual">
+              <div class="process-step-icon-ring">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div class="process-connector last-connector"></div>
+            </div>
+            <div class="process-step-body bg-card rounded-lg shadow-md border-gold">
+              <span class="process-step-num">Step 03</span>
+              <h3 class="process-step-title">Bespoke Delivery</h3>
+              <p class="process-step-desc">Delivered chilled on premium reusable hardwood trays, or assembled on-site
+                by our mongers as a sprawling, stunning grazing table your guests will remember.</p>
+              <div class="process-step-tags flex gap-xs flex-wrap mt-xs">
+                <span class="process-tag"><i class="fas fa-snowflake"></i> Cold-Chain Preserved</span>
+                <span class="process-tag"><i class="fas fa-star"></i> White-Glove Setup</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center mt-medium">
+          <a href="#contact" class="btn btn-primary">Start Your Catering Journey</a>
+        </div>
+      </section>
+
+      <!-- Section 5: Testimonials -->
+      <section class="testimonials-section py-large" id="h1-testimonials">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag">Client Love</span>
+          <h2 class="section-title">Word from the Grazers</h2>
+          <p>We pride ourselves on creating memorable dining centerpieces for our guests.</p>
+        </div>
+        <div
+          class="container max-w-md testimonial-slider-container p-medium bg-card rounded-lg shadow-sm border-gold text-center">
+          <div class="testimonial-card active">
+            <div class="quote-stars text-gold mb-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text italic">"L'Aura Grazing completely wowed our guests at our wedding cocktail hour.
+              The grazing table was an absolute masterpiece—the cheeses were exquisite, the design was jaw-droppingly
+              beautiful, and people still talk about it today!"</p>
+            <div class="testimonial-client mt-medium">
+              <h4 class="client-name">Eleanor &amp; Julian Vance</h4>
+              <span class="client-role text-secondary text-sm">Wedding Clients | October 2025</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Newsletter / Call to Action -->
+      <section class="cta-banner-section py-large text-white relative">
+        <div class="cta-bg"
+          style="background-image: linear-gradient(rgba(28,22,19,0.85), rgba(0,0,0,0.9)), url('c17.jpg'); background-size: cover; background-position: center; position: absolute; top:0; left:0; width:100%; height:100%; z-index: 1;">
+        </div>
+        <div class="container text-center relative max-w-lg" style="z-index: 2;">
+          <span class="section-tag text-gold">Join the Collective</span>
+          <h2 class="section-title text-white">Ready to Taste the Good Life?</h2>
+          <p class="mb-medium text-cream max-w-md margin-auto">Sign up for our exclusive seasonal updates, cheesemonger
+            secrets, and custom pairing guides, and receive 10% off your first order.</p>
+          <form class="cta-form flex gap-small justify-center" id="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required class="form-input text-dark rounded-sm">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <div class="success-message mt-small text-green" id="newsletter-success">Thank you! Check your inbox for your
+            10% discount code.</div>
+        </div>
+      </section>
+
+
+      <!-- HOME 1 FOOTER -->
+      <footer class="site-footer bg-dark text-white py-medium">
+        <div class="container grid grid-4-cols gap-medium">
+          <div class="footer-col brand-col">
+            <a href="#home-1" class="logo footer-logo mb-small">
+              <span class="logo-icon"><i class="fa-solid fa-cheese"></i></span>
+              <span class="logo-text text-white">L'AURA <span class="logo-sub">GRAZING</span></span>
+            </a>
+            <p class="footer-desc">Curating bespoke cheese, cured meats, and visual feasting tables that serve as the
+              focal point of life's best celebrations.</p>
+            <div class="social-links flex gap-small pt-small">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Explore</h4>
+            <ul>
+              <li><a href="#home-2" class="footer-link">Modern Menu</a></li>
+              <li><a href="#about" class="footer-link">Our Story</a></li>
+              <li><a href="#services" class="footer-link">Custom Builder</a></li>
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Contact</h4>
+            <ul>
+              <li><span class="footer-link"><i class="fas fa-phone mr-xs"></i> (555) 349-2910</span></li>
+              <li><span class="footer-link"><i class="fas fa-envelope mr-xs"></i> hello@lauragrazing.com</span></li>
+              <li><span class="footer-link"><i class="fas fa-map-marker-alt mr-xs"></i> 742 Artisanal Way, Suite
+                  100</span></li>
+            </ul>
+          </div>
+          <div class="footer-col hours-col">
+            <h4 class="footer-subtitle">Hours</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+            <p>Sat - Sun: 8:00 AM - 8:00 PM</p>
+            <p class="text-gold italic pt-xs">Catering services available 24/7 with advanced booking.</p>
+          </div>
+        </div>
+        <div
+          class="container border-top pt-medium mt-medium text-center flex justify-between align-center flex-wrap gap-small">
+          <p class="copyright-text">&copy; 2026 L'Aura Grazing. All rights reserved.</p>
+          <p class="designer-text">Crafted with elegance and passion.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ==============================================
+         HOME 2 VIEW (MODERN & INTERACTIVE - 6 SECTIONS)
+         ============================================== -->
+    <div class="app-view" id="view-home-2">
+      <!-- Section 1: Split Screen Modern Hero -->
+      <section class="split-hero-section" id="h2-hero"
+        style="border-bottom: 1px solid var(--border-color);">
+        <div class="split-hero-content flex flex-column justify-center">
+          <div class="flex align-center gap-xs mb-xs">
+            <span class="logo-icon text-gold" style="font-size: 1.1rem;"><i class="fa-solid fa-cheese"></i></span>
+            <span class="hero-subtitle text-gold uppercase tracking-wider text-xs font-bold">L'AURA PREMIUM
+              MODERN</span>
+          </div>
+          <h1 class="hero-title font-serif">Epicurean Art, Deliberately Styled</h1>
+          <p class="hero-description text-secondary">Interactive,
+            customisable charcuterie layouts tailored to your event's exact visual theme and flavour preferences.
+            Beautiful to look at, sensational to taste.</p>
+          <div class="hero-actions-container flex gap-small">
+            <a href="#services" class="btn btn-primary">Build Your Board</a>
+            <a href="#h2-pairings" class="btn btn-outline-dark">Try Pairings Guide</a>
+          </div>
+        </div>
+        <div class="split-hero-image-wrapper">
+          <div class="hero-square-wrapper relative">
+            <img src="c12.jpg" alt="Stunning tiered grazing setup" class="split-hero-img">
+            <div class="badge-overlay split-hero-badge">
+              <span class="font-bold text-xs uppercase tracking-wider text-gold flex align-center gap-xs">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> High Artistry
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Features Grid (Why Choose) -->
+      <section class="features-grid-section py-large bg-subtle" id="h2-features">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">The Grazing Experience</span>
+          <h2 class="section-title">Why Choose L'Aura</h2>
+          <p>We combine culinary design with expert food science to make your board the highlight of the evening.</p>
+        </div>
+        <div class="container">
+          <div class="h2-features-grid">
+            <!-- Step I -->
+            <div class="h2-feature-card bg-card rounded-lg shadow-md border-gold p-medium text-center">
+              <div class="h2-feature-num">I</div>
+              <i class="fa-solid fa-medal h2-feature-icon"></i>
+              <h3 class="h2-feature-title">Award Winning Cheeses</h3>
+              <p class="text-sm">We source exclusively from creamier regional farms, featuring raw-milk cheddars,
+                award-winning Bries, and cave-aged Goudas.</p>
+            </div>
+            <!-- Step II -->
+            <div class="h2-feature-card bg-card rounded-lg shadow-md border-gold p-medium text-center">
+              <div class="h2-feature-num">II</div>
+              <i class="fa-solid fa-wine-glass-alt h2-feature-icon"></i>
+              <h3 class="h2-feature-title">Curated Combinations</h3>
+              <p class="text-sm">Every element is strategically paired. From dry cured salamis to honeycombs, flavour
+                dynamics are precision designed.</p>
+            </div>
+            <!-- Step III -->
+            <div class="h2-feature-card bg-card rounded-lg shadow-md border-gold p-medium text-center">
+              <div class="h2-feature-num">III</div>
+              <i class="fa-solid fa-truck-ramp-box h2-feature-icon"></i>
+              <h3 class="h2-feature-title">Sustainable Materials</h3>
+              <p class="text-sm">Our boards are made from beautiful, reclaimed hardwoods that are yours to keep,
+                treated with food-grade beeswax.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Interactive Flavor Pairings Guide -->
+      <section class="pairings-section py-large bg-card" id="h2-pairings"
+        style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">Interactive Flavor Lab</span>
+          <h2 class="section-title">Perfect Cheese Pairings</h2>
+          <p>Click on any of our featured cheeses below to discover their ideal meat, fruit, and wine pairings, curated
+            by our sommelier.</p>
+        </div>
+        <div class="container grid grid-2-cols gap-large align-center">
+          <div class="pairing-selector-col flex flex-column gap-small">
+            <button class="pairing-select-btn active" data-pairing="brie">
+              <i class="fas fa-cheese"></i> Double Cream French Brie
+            </button>
+            <button class="pairing-select-btn" data-pairing="gouda">
+              <i class="fas fa-cheese"></i> 24-Month Aged Dutch Gouda
+            </button>
+            <button class="pairing-select-btn" data-pairing="gorgonzola">
+              <i class="fas fa-cheese"></i> Gorgonzola Dolce
+            </button>
+            <button class="pairing-select-btn" data-pairing="pecorino">
+              <i class="fas fa-cheese"></i> Italian Truffle Pecorino
+            </button>
+          </div>
+          <div class="pairing-display-col p-large rounded-lg border-gold shadow-lg"
+            style="background-color: var(--bg-body); border-style: dashed; border-width: 2px;">
+            <div id="pairing-info-box">
+              <h3 class="pairing-title text-gold" id="pairing-title-val"
+                style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 0.5rem;">Double Cream French
+                Brie</h3>
+              <p class="pairing-desc italic mb-medium" id="pairing-desc-val" style="color: var(--text-secondary);">"A
+                buttery, decadent, bloomy-rind cheese that melts elegantly in the mouth."</p>
+
+              <div class="pairing-details flex flex-column gap-medium"
+                style="border-top: 1px solid var(--border-color); padding-top: 1.25rem;">
+                <div class="pairing-detail-item flex align-center gap-small">
+                  <span class="detail-icon" style="color: var(--accent-gold); font-size: 1.2rem;"><i
+                      class="fas fa-drumstick-bite"></i></span>
+                  <div>
+                    <strong
+                      style="display:block; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-secondary);">Cured
+                      Meat Match</strong>
+                    <span id="pairing-meat-val" style="font-weight: 500;">Prosciutto di Parma or Spicy Coppa</span>
+                  </div>
+                </div>
+                <div class="pairing-detail-item flex align-center gap-small">
+                  <span class="detail-icon" style="color: var(--accent-gold); font-size: 1.2rem;"><i
+                      class="fas fa-apple-whole"></i></span>
+                  <div>
+                    <strong
+                      style="display:block; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-secondary);">Sweet/Fresh
+                      Accoutrement</strong>
+                    <span id="pairing-sweet-val" style="font-weight: 500;">Fresh ripe figs, raw local honeycomb, or
+                      crisp green grapes</span>
+                  </div>
+                </div>
+                <div class="pairing-detail-item flex align-center gap-small">
+                  <span class="detail-icon" style="color: var(--accent-gold); font-size: 1.2rem;"><i
+                      class="fas fa-wine-glass"></i></span>
+                  <div>
+                    <strong
+                      style="display:block; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-secondary);">Wine
+                      Pairing</strong>
+                    <span id="pairing-wine-val" style="font-weight: 500;">Chardonnay, Champagne, or a dry sparkling
+                      Rosé</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Seasonal Packages -->
+      <section class="seasonal-packages py-large bg-subtle" id="h2-packages">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">Themed Selections</span>
+          <h2 class="section-title">Seasonal Grazing Packages</h2>
+          <p>Hand-crafted platters combining rich cheeses, fine meats, fresh fruits, premium nuts, and custom garnishes.
+            Perfect for any occasion.</p>
+        </div>
+        <div class="container grid grid-3-cols gap-medium">
+          <!-- Package 1 -->
+          <div class="package-card flex flex-column bg-card rounded-lg shadow-md overflow-hidden border-gold">
+            <div class="package-card-img-container relative overflow-hidden">
+              <img src="c6.jpg" alt="Autumn Warmth" class="package-img">
+              <span class="board-card-badge">Best Seller</span>
+            </div>
+            <div class="package-content p-medium flex-grow flex flex-column justify-between">
+              <div>
+                <h3 class="package-title font-serif">The Alpine Meadow Board</h3>
+                <p class="package-desc text-secondary">Inspired by Swiss chalets. Features
+                  rich Gruyère, Emmental, mountain salamis, toasted walnuts, and dried sour cherries.</p>
+              </div>
+              <div class="package-footer border-top pt-small mt-small flex justify-between align-center">
+                <span class="package-price font-bold text-gold">$135</span>
+                <a href="#services" class="btn btn-sm btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Package 2 -->
+          <div class="package-card flex flex-column bg-card rounded-lg shadow-md overflow-hidden border-gold">
+            <div class="package-card-img-container relative overflow-hidden">
+              <img src="c8.jpg" alt="Botanical Bliss" class="package-img">
+              <span class="board-card-badge" style="background: #c28b38;">Signature</span>
+            </div>
+            <div class="package-content p-medium flex-grow flex flex-column justify-between">
+              <div>
+                <h3 class="package-title font-serif">The Botanical Garden Platter</h3>
+                <p class="package-desc text-secondary">Perfect for garden parties. Soft goat
+                  cheeses rolled in edible flower petals, creamy brie, fresh blackberries, honey, and crackers.</p>
+              </div>
+              <div class="package-footer border-top pt-small mt-small flex justify-between align-center">
+                <span class="package-price font-bold text-gold">$150</span>
+                <a href="#services" class="btn btn-sm btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Package 3 -->
+          <div class="package-card flex flex-column bg-card rounded-lg shadow-md overflow-hidden border-gold">
+            <div class="package-card-img-container relative overflow-hidden">
+              <img src="c7.jpg" alt="Tapas & Charcuterie Cups" class="package-img">
+              <span class="board-card-badge" style="background: #6b4c35;">Popular</span>
+            </div>
+            <div class="package-content p-medium flex-grow flex flex-column justify-between">
+              <div>
+                <h3 class="package-title font-serif">The Grazing Cones &amp; Cups</h3>
+                <p class="package-desc text-secondary">Single-serve, socially-distanced
+                  elegant charcuterie cups filled with cheese skewers, olives, nuts, and crackers. Sold in batches of
+                  10.</p>
+              </div>
+              <div class="package-footer border-top pt-small mt-small flex justify-between align-center">
+                <span class="package-price font-bold text-gold">$160 / set</span>
+                <a href="#services" class="btn btn-sm btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Client Testimonials (Split Layout) -->
+      <section class="testimonials-section py-large bg-card" id="h2-testimonials"
+        style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container grid grid-2-cols gap-large align-center">
+          <div class="testimonial-image-panel relative">
+            <img src="c14.jpg" alt="Stunning board closeup" class="img-fluid rounded-lg shadow-md border-gold">
+            <div class="testimonial-stamp bg-card p-xs rounded shadow-sm flex align-center gap-xs">
+              <i class="fa-solid fa-star text-gold"></i>
+              <span class="font-bold text-xs uppercase letter-spacing">Top Rated Service</span>
+            </div>
+          </div>
+          <div class="testimonial-content-panel p-large bg-card border-gold rounded-lg shadow-md testimonial-slider-container">
+            <span class="section-tag text-gold">Client Testimonies</span>
+            <div class="testimonial-card active">
+              <div class="quote-header flex justify-between align-center mb-xs">
+                <div class="quote-icon text-gold"><i class="fas fa-quote-left"></i></div>
+                <div class="quote-stars flex gap-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+              <p class="testimonial-text italic">"L'Aura Grazing completely
+                wowed our guests at our wedding cocktail hour. The grazing table was an absolute masterpiece — the cheeses
+                were exquisite, the design was jaw-droppingly beautiful, and people still talk about it today!"</p>
+              <div class="testimonial-client flex align-center gap-small border-top pt-small mt-small">
+                <div class="client-avatar-placeholder"><i class="fa-solid fa-user-tie"></i></div>
+                <div>
+                  <h4 class="client-name">Eleanor &amp; Julian Vance</h4>
+                  <span class="client-role">Wedding Clients | October 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Accordion FAQ removed to dedicated page -->
+
+      <!-- Section 7: Interactive Reservation Teaser -->
+      <section class="booking-teaser-section py-large text-white relative overflow-hidden">
+        <div class="booking-bg"
+          style="background-image: linear-gradient(rgba(17, 12, 9, 0.9), rgba(17, 12, 9, 0.95)), url('c9.jpg'); background-attachment: fixed; background-size: cover; background-position: center; position: absolute; top:0; left:0; width:100%; height:100%; z-index: 1;">
+        </div>
+        <div class="container grid grid-2-cols gap-large align-center relative" style="z-index: 2;">
+          <div class="booking-teaser-text">
+            <span class="section-tag text-gold">Plan Your Gathering</span>
+            <h2 class="section-title text-white">Let Us Make Your Event Memorable</h2>
+            <p class="text-cream">Whether you are hosting a small dinner
+              party, a corporate cocktail mixer, or a lavish wedding reception, we curate gorgeous grazing visuals that
+              set the standard for food elegance.</p>
+            <ul class="teaser-checklist flex flex-column gap-xs pt-small">
+              <li><i class="fas fa-check text-gold mr-xs"></i> Fully custom layouts matching your event theme</li>
+              <li><i class="fas fa-check text-gold mr-xs"></i> On-site setup and styling by professional mongers</li>
+              <li><i class="fas fa-check text-gold mr-xs"></i> Biodegradable wooden cutlery and display boxes</li>
+            </ul>
+          </div>
+          <div class="teaser-form-box p-medium rounded-lg">
+            <h3 class="mb-xs">Quick Reservation Request</h3>
+            <p class="mb-small text-cream" style="font-size: 0.9rem;">Receive an instant estimate for your
+              catering needs.</p>
+            <form id="quick-quote-form" class="flex flex-column gap-xs">
+              <input type="text" placeholder="Your Name" required class="form-input">
+              <input type="email" placeholder="Email Address" required class="form-input">
+              <select required class="form-input">
+                <option value="" disabled selected>Estimated Guest Count</option>
+                <option value="1-10">Under 10 guests</option>
+                <option value="10-30">10 to 30 guests</option>
+                <option value="30-70">30 to 70 guests</option>
+                <option value="70+">70+ guests</option>
+              </select>
+              <button type="submit" class="btn btn-primary w-full mt-xs">Get Quote Estimate</button>
+            </form>
+            <div id="quick-quote-success" class="text-green mt-xs font-bold text-center" style="display: none;">Quote
+              request submitted! We will email you shortly.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8: Floating Card Newsletter -->
+      <section class="cta-banner-section py-large relative bg-subtle">
+        <div
+          class="container max-w-lg relative bg-card p-large rounded-lg border-gold shadow-lg text-center overflow-hidden">
+          <div class="cta-card-bg-overlay"
+            style="background-image: linear-gradient(rgba(28,22,19,0.95), rgba(28,22,19,0.9)), url('c17.jpg');"></div>
+          <div class="cta-card-inner relative">
+            <span class="section-tag text-gold">Join the Collective</span>
+            <h2 class="section-title text-white">Let's Co-create Your Next Celebratory Feast</h2>
+            <p class="mb-medium text-cream max-w-md margin-auto">Sign up for our exclusive seasonal updates,
+              cheesemonger secrets, and custom pairing guides, and receive 10% off your first custom catering order.</p>
+            <form class="cta-form flex gap-small justify-center" id="newsletter-form-h2">
+              <input type="email" placeholder="Your Email Address" required class="form-input text-dark rounded-sm">
+              <button type="submit" class="btn btn-primary-light">Subscribe</button>
+            </form>
+            <div class="success-message mt-small text-green" id="newsletter-success-h2" style="display: none;">Thank
+              you! Check your inbox for your 10% discount code.</div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- HOME 2 FOOTER -->
+      <footer class="site-footer bg-dark text-white py-medium">
+        <div class="container grid grid-4-cols gap-medium">
+          <div class="footer-col brand-col">
+            <a href="#home-1" class="logo footer-logo mb-small">
+              <span class="logo-icon"><i class="fa-solid fa-cheese"></i></span>
+              <span class="logo-text text-white">L'AURA <span class="logo-sub">GRAZING</span></span>
+            </a>
+            <p class="footer-desc">Curating bespoke cheese, cured meats, and visual feasting tables that serve as the
+              focal point of life's best celebrations.</p>
+            <div class="social-links flex gap-small pt-small">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Explore</h4>
+            <ul>
+              <li><a href="#home-1" class="footer-link">Classic Menu</a></li>
+              <li><a href="#about" class="footer-link">Our Story</a></li>
+              <li><a href="#services" class="footer-link">Custom Builder</a></li>
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Contact</h4>
+            <ul>
+              <li><span class="footer-link"><i class="fas fa-phone mr-xs"></i> (555) 349-2910</span></li>
+              <li><span class="footer-link"><i class="fas fa-envelope mr-xs"></i> hello@lauragrazing.com</span></li>
+              <li><span class="footer-link"><i class="fas fa-map-marker-alt mr-xs"></i> 742 Artisanal Way, Suite
+                  100</span></li>
+            </ul>
+          </div>
+          <div class="footer-col hours-col">
+            <h4 class="footer-subtitle">Hours</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+            <p>Sat - Sun: 8:00 AM - 8:00 PM</p>
+            <p class="text-gold italic pt-xs">Catering services available 24/7 with advanced booking.</p>
+          </div>
+        </div>
+        <div
+          class="container border-top pt-medium mt-medium text-center flex justify-between align-center flex-wrap gap-small">
+          <p class="copyright-text">&copy; 2026 L'Aura Grazing. All rights reserved.</p>
+          <p class="designer-text">Crafted with elegance and passion.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ==============================================
+         ABOUT US VIEW
+         ============================================== -->
+    <div class="app-view" id="view-about">
+      <!-- About Hero -->
+      <section class="subpage-hero py-large text-white relative">
+        <div class="subpage-hero-bg"
+          style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('c11.jpg');"></div>
+        <div class="container text-center relative">
+          <span class="section-tag text-gold">Meet the Makers</span>
+          <h1 class="hero-title text-white">Our Story &amp; Dedication</h1>
+          <p class="max-w-md margin-auto">Curing culinary experiences that blend traditional cheesemongering craft with
+            modern styling.</p>
+        </div>
+      </section>
+
+      <!-- History & Story -->
+      <section class="about-story-section py-large">
+        <div class="container grid grid-2-cols gap-large align-center">
+          <div>
+            <span class="section-tag">A Decent Obsession</span>
+            <h2 class="section-title">The Art of the Graze</h2>
+            <p class="lead">L'Aura Grazing was born out of a simple love for hosting dinner parties where the central
+              board became the fireplace around which stories were shared.</p>
+            <p>Founded in 2021 by a pairing stylist and a certified cheesemonger, we set out to change the way catering
+              is viewed. Instead of chafing dishes and static platters, we wanted to build visual feasts that invite
+              interaction, exploration, and sensory play.</p>
+            <p>Every element on our boards is placed with intention. The tanginess of the pickled grapes cuts through
+              the buttery fat of the triple-cream brie. The smoky, complex saltiness of the spicy coppa pairs
+              wonderfully with the sweet crunch of honeycomb. We balance flavors, textures, and colors to create edible
+              masterworks.</p>
+          </div>
+          <div class="story-image-grid grid grid-2-cols gap-small">
+            <img src="c10.jpg" alt="Artisanal cheeses close up" class="img-fluid rounded-lg shadow-sm">
+            <img src="c13.jpg" alt="Charcuterie arrangement close up" class="img-fluid rounded-lg shadow-sm">
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Members Section -->
+      <section class="team-section py-large bg-subtle" id="about-team">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag">Our Experts</span>
+          <h2 class="section-title">Meet Our Cheesemongers</h2>
+          <p>Our team consists of passionate culinary artists, certified cheese professionals, and pairing experts
+            dedicated to your event.</p>
+        </div>
+        <div class="container grid grid-2-cols gap-large max-w-lg">
+          <!-- Member 1 -->
+          <div class="team-card flex gap-medium align-center bg-card rounded-lg shadow-sm">
+            <div class="team-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=220&h=220&fit=crop&crop=face"
+                alt="Gabrielle Laurent - Certified Cheesemonger" class="team-img">
+            </div>
+            <div>
+              <span class="team-role text-gold">Co-Founder &amp; Certified Cheesemonger</span>
+              <h3 class="team-name">Gabrielle Laurent</h3>
+              <p>With over a decade of experience studying dairies across Switzerland and France, Gabrielle curates our
+                rare cheese collections.</p>
+            </div>
+          </div>
+          <!-- Member 2 -->
+          <div class="team-card flex gap-medium align-center bg-card rounded-lg shadow-sm">
+            <div class="team-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=220&h=220&fit=crop&crop=face"
+                alt="Marcus Sterling - Grazing Designer" class="team-img">
+            </div>
+            <div>
+              <span class="team-role text-gold">Co-Founder &amp; Grazing Designer</span>
+              <h3 class="team-name">Marcus Sterling</h3>
+              <p>An architect turned food designer, Marcus designs the spatial layouts and color palettes of our custom
+                grazing tables.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sourcing Partners -->
+      <section class="partners-section py-large">
+        <div class="container grid grid-2-cols gap-large align-center">
+          <div class="partners-image-wrapper">
+            <img src="c12.jpg" alt="Artisanal Honey Jar and cheeses" class="img-fluid rounded-lg shadow-md border-gold">
+          </div>
+          <div>
+            <span class="section-tag">Ethical Sourcing</span>
+            <h2 class="section-title">Sourced from Local Dairies &amp; Farms</h2>
+            <p>We pride ourselves on direct, transparent supply lines. We know exactly where our ingredients originate.
+              Our honey comes from a rooftop cooperative in the heart of the city; our soft goat cheeses are handmade on
+              a farm in Wisconsin; and our prosciutto is cured by a family-owned salumeria in Italy.</p>
+            <p>By buying from small-scale farms, we ensure peak freshness, seasonal variability, and support for local
+              sustainable agriculture.</p>
+            <a href="#services" class="btn btn-primary mt-small">See Our Catering Options</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Our Standards -->
+      <section class="about-standards-section py-large bg-subtle">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">High Artistry</span>
+          <h2 class="section-title">Our Curation Standards</h2>
+          <p>Every board we construct follows three absolute culinary mandates to guarantee visual elegance and
+            exceptional flavor profile.</p>
+        </div>
+        <div class="container grid grid-3-cols gap-medium">
+          <div class="standard-card p-medium bg-card rounded-lg shadow-sm text-center border-gold">
+            <div class="standard-icon mb-xs"><i class="fa-solid fa-medal text-gold text-2xl"></i></div>
+            <h3 class="mb-xs">Small-Batch Exclusives</h3>
+            <p class="text-sm">We only select cheese and cured meats from independent family creameries and artisan
+              curing houses, ensuring rich flavors unavailable in mass markets.</p>
+          </div>
+          <div class="standard-card p-medium bg-card rounded-lg shadow-sm text-center border-gold">
+            <div class="standard-icon mb-xs"><i class="fa-solid fa-leaf text-gold text-2xl"></i></div>
+            <h3 class="mb-xs">100% Organic Produce</h3>
+            <p class="text-sm">From fresh figs and local honeycomb to organic grapes and hand-picked flowers, every
+              decorative element is fully edible, organic, and clean.</p>
+          </div>
+          <div class="standard-card p-medium bg-card rounded-lg shadow-sm text-center border-gold">
+            <div class="standard-icon mb-xs"><i class="fa-solid fa-snowflake text-gold text-2xl"></i></div>
+            <h3 class="mb-xs">Cold-Chain Preserved</h3>
+            <p class="text-sm">All ingredients are kept strictly temperature-controlled during sorting, preparation,
+              transport, and setup to maximize taste and food safety.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Our Journey — Compact Balanced Timeline -->
+      <section class="about-journey-section py-large">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">The Timeline</span>
+          <h2 class="section-title">Our Growth &amp; Milestones</h2>
+          <p>How a simple love for fine food and visual styling blossomed into a premier bespoke catering studio.</p>
+        </div>
+        <div class="container">
+          <div class="journey-timeline">
+            <!-- Year 2023 -->
+            <div class="journey-item">
+              <div class="journey-year-badge">2023</div>
+              <div class="journey-connector"></div>
+              <div class="journey-content bg-card rounded-lg shadow-md border-gold p-medium">
+                <div class="journey-icon"><i class="fa-solid fa-fire-flame-curved text-gold"></i></div>
+                <h3 class="text-gold">The Spark</h3>
+                <p class="text-sm">L'Aura Grazing was born out of a small kitchen in Gastronomy Heights, serving local
+                  families and corporate events with custom wood platter deliveries.</p>
+              </div>
+            </div>
+            <!-- Year 2024 -->
+            <div class="journey-item">
+              <div class="journey-year-badge">2024</div>
+              <div class="journey-connector"></div>
+              <div class="journey-content bg-card rounded-lg shadow-md border-gold p-medium">
+                <div class="journey-icon"><i class="fa-solid fa-arrow-trend-up text-gold"></i></div>
+                <h3 class="text-gold">Expanding Horizons</h3>
+                <p class="text-sm">We expanded to full-scale event catering and on-site feasting table designs,
+                  partnering with top local flower farms for organic botanical styling.</p>
+              </div>
+            </div>
+            <!-- Year 2026 -->
+            <div class="journey-item">
+              <div class="journey-year-badge">2026</div>
+              <div class="journey-connector last"></div>
+              <div class="journey-content bg-card rounded-lg shadow-md border-gold p-medium">
+                <div class="journey-icon"><i class="fa-solid fa-building-columns text-gold"></i></div>
+                <h3 class="text-gold">Artisanal Studio</h3>
+                <p class="text-sm">Today, we cater large weddings, galas, and launch parties with state-of-the-art
+                  grazing tables, operating out of our own dedicated design studio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT FOOTER -->
+      <footer class="site-footer bg-dark text-white py-medium">
+        <div class="container grid grid-4-cols gap-medium">
+          <div class="footer-col brand-col">
+            <a href="#home-1" class="logo footer-logo mb-small">
+              <span class="logo-icon"><i class="fa-solid fa-cheese"></i></span>
+              <span class="logo-text text-white">L'AURA <span class="logo-sub">GRAZING</span></span>
+            </a>
+            <p class="footer-desc">Curating bespoke cheese, cured meats, and visual feasting tables that serve as the
+              focal point of life's best celebrations.</p>
+            <div class="social-links flex gap-small pt-small">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Explore</h4>
+            <ul>
+              <li><a href="#home-1" class="footer-link">Classic Menu</a></li>
+              <li><a href="#home-2" class="footer-link">Modern Menu</a></li>
+              <li><a href="#services" class="footer-link">Custom Builder</a></li>
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Contact</h4>
+            <ul>
+              <li><span class="footer-link"><i class="fas fa-phone mr-xs"></i> (555) 349-2910</span></li>
+              <li><span class="footer-link"><i class="fas fa-envelope mr-xs"></i> hello@lauragrazing.com</span></li>
+              <li><span class="footer-link"><i class="fas fa-map-marker-alt mr-xs"></i> 742 Artisanal Way, Suite
+                  100</span></li>
+            </ul>
+          </div>
+          <div class="footer-col hours-col">
+            <h4 class="footer-subtitle">Hours</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+            <p>Sat - Sun: 8:00 AM - 8:00 PM</p>
+            <p class="text-gold italic pt-xs">Catering services available 24/7 with advanced booking.</p>
+          </div>
+        </div>
+        <div
+          class="container border-top pt-medium mt-medium text-center flex justify-between align-center flex-wrap gap-small">
+          <p class="copyright-text">&copy; 2026 L'Aura Grazing. All rights reserved.</p>
+          <p class="designer-text">Crafted with elegance and passion.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ==============================================
+         SERVICES VIEW (WITH INTERACTIVE CUSTOM BOARD BUILDER)
+         ============================================== -->
+    <div class="app-view" id="view-services">
+      <!-- Services Hero -->
+      <section class="subpage-hero py-large text-white relative">
+        <div class="subpage-hero-bg"
+          style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('c12.jpg');"></div>
+        <div class="container text-center relative">
+          <span class="section-tag text-gold">Exquisite Caterings</span>
+          <h1 class="hero-title text-white">Our Signature Services &amp; Builder</h1>
+          <p class="max-w-md margin-auto">Whether hosting an intimate date night or a wedding feast for hundreds, we
+            have a curated service for you.</p>
+        </div>
+      </section>
+
+      <!-- Main Services Grid -->
+      <section class="services-list-section py-large">
+        <div class="container grid grid-3-cols gap-medium">
+          <!-- Service 1 -->
+          <div class="service-detail-card p-medium bg-card border-gold rounded-lg shadow-sm">
+            <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Bespoke Grazing Tables</h3>
+            <p>Perfect for weddings, corporate celebrations, and larger galas. We build sprawling edible landscapes
+              directly at your venue, featuring elevations, seasonal floras, and multi-tiered setups.</p>
+            <ul class="service-list-items pt-small flex flex-column gap-xs">
+              <li><i class="fas fa-check text-gold"></i> Setup, styling, and clean up</li>
+              <li><i class="fas fa-check text-gold"></i> Custom botanical styling</li>
+              <li><i class="fas fa-check text-gold"></i> Standard size serving starting at 30 guests</li>
+            </ul>
+          </div>
+          <!-- Service 2 -->
+          <div class="service-detail-card p-medium bg-card border-gold rounded-lg shadow-sm">
+            <div class="service-icon"><i class="fa-solid fa-gift"></i></div>
+            <h3>Custom Gift Platters &amp; Boxes</h3>
+            <p>Thoughtful corporate gifts, anniversaries, or celebratory housewarmings. Our custom delivery boxes are
+              beautifully presented in solid timber wood and tied with luxurious linen ribbons.</p>
+            <ul class="service-list-items pt-small flex flex-column gap-xs">
+              <li><i class="fas fa-check text-gold"></i> Delivered chilled in insulated containers</li>
+              <li><i class="fas fa-check text-gold"></i> Includes custom handwritten notes</li>
+              <li><i class="fas fa-check text-gold"></i> Reusable wooden board included</li>
+            </ul>
+          </div>
+          <!-- Service 3 -->
+          <div class="service-detail-card p-medium bg-card border-gold rounded-lg shadow-sm">
+            <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Styling Workshops &amp; Classes</h3>
+            <p>Learn the secrets of board-styling from our head mongers. Perfect for bridal showers, team-building, or a
+              creative weekend class. All supplies and cheeses are provided.</p>
+            <ul class="service-list-items pt-small flex flex-column gap-xs">
+              <li><i class="fas fa-check text-gold"></i> Private or group bookings</li>
+              <li><i class="fas fa-check text-gold"></i> Wine-pairing certificates</li>
+              <li><i class="fas fa-check text-gold"></i> Take home your curated masterpiece</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Gourmet Add-Ons & Enhancements -->
+      <section class="services-addons-section py-large bg-subtle">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">Elevate Your Platter</span>
+          <h2 class="section-title">Gourmet Add-Ons &amp; Enhancements</h2>
+          <p>Add these curated embellishments to any board or grazing table selection for an extra layer of culinary
+            discovery.</p>
+        </div>
+        <div class="container grid grid-4-cols gap-medium">
+          <div class="addon-card p-medium bg-card rounded-lg shadow-sm border-gold text-center">
+            <div class="addon-icon mb-xs"><i class="fa-solid fa-wine-glass text-gold text-lg"></i></div>
+            <h4 class="mb-xs">Wine &amp; Cider Pairings</h4>
+            <p class="text-xs text-secondary">Expertly chosen pairings from boutique local vineyards to match the cheese
+              profiles.</p>
+            <span class="text-sm text-gold font-bold">From $45</span>
+          </div>
+          <div class="addon-card p-medium bg-card rounded-lg shadow-sm border-gold text-center">
+            <div class="addon-icon mb-xs"><i class="fa-solid fa-spa text-gold text-lg"></i></div>
+            <h4 class="mb-xs">Botanical Styling</h4>
+            <p class="text-xs text-secondary">Edible flowers, fresh eucalyptus, and organic seasonal greens styled
+              around your platters.</p>
+            <span class="text-sm text-gold font-bold">From $25</span>
+          </div>
+          <div class="addon-card p-medium bg-card rounded-lg shadow-sm border-gold text-center">
+            <div class="addon-icon mb-xs"><i class="fa-solid fa-tag text-gold text-lg"></i></div>
+            <h4 class="mb-xs">Pairing Labels &amp; Flags</h4>
+            <p class="text-xs text-secondary">Handwritten parchment flags indicating cheese names, milk types, and
+              origin states.</p>
+            <span class="text-sm text-gold font-bold">From $15</span>
+          </div>
+          <div class="addon-card p-medium bg-card rounded-lg shadow-sm border-gold text-center">
+            <div class="addon-icon mb-xs"><i class="fa-solid fa-tree text-gold text-lg"></i></div>
+            <h4 class="mb-xs">Premium Walnut Boards</h4>
+            <p class="text-xs text-secondary">Upgrade to a reusable, hand-carved dark walnut platter for your guests to
+              keep.</p>
+            <span class="text-sm text-gold font-bold">From $60</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Inclusive Dining & Dietary Customizations -->
+      <section class="dietary-custom-section py-large">
+        <div class="container grid grid-2-cols gap-large align-center">
+          <div class="dietary-image-wrapper">
+            <img src="c13.jpg" alt="Artisanal gluten-free setups" class="img-fluid rounded-lg shadow-md border-gold"
+              style="height: 380px; width: 100%; object-fit: cover;">
+          </div>
+          <div>
+            <span class="section-tag">Catering for Everyone</span>
+            <h2 class="section-title">Dietary &amp; Allergen Customizations</h2>
+            <p class="lead">We believe that beautiful grazing should be accessible to all guests, regardless of dietary
+              choices or allergen concerns.</p>
+            <p>Our kitchen maintains dedicated sanitization protocols to prevent cross-contamination. Any board can be
+              styled with alternatives that taste just as incredible as our classic pairings.</p>
+            <div class="dietary-badges flex flex-wrap gap-xs pt-small">
+              <span class="badge-tag bg-subtle p-xs rounded-sm text-xs"><i class="fas fa-check text-gold mr-xs"></i>
+                Gluten-Free Crackers</span>
+              <span class="badge-tag bg-subtle p-xs rounded-sm text-xs"><i class="fas fa-check text-gold mr-xs"></i>
+                Vegan Fromage</span>
+              <span class="badge-tag bg-subtle p-xs rounded-sm text-xs"><i class="fas fa-check text-gold mr-xs"></i>
+                Nut-Free Kitchen</span>
+              <span class="badge-tag bg-subtle p-xs rounded-sm text-xs"><i class="fas fa-check text-gold mr-xs"></i>
+                Lactose-Free Dairy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE SECTION: Custom Charcuterie Board Builder -->
+      <section class="builder-section py-large bg-subtle" id="board-builder-app">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">Co-Create Your Feast</span>
+          <h2 class="section-title">Interactive Custom Board Builder</h2>
+          <p>Design your board dynamically! Select your layout size, choose your preferred cheeses, charcuterie
+            selections, and accompaniments. Watch the live summary update below.</p>
+        </div>
+
+        <div class="container grid grid-2-cols gap-large">
+          <!-- Step Selector Column -->
+          <div class="builder-choices-panel p-large bg-card rounded-lg shadow-md border-gold">
+
+            <!-- Step 1: Size -->
+            <div class="builder-step mb-medium">
+              <h3 class="step-header"><span class="step-num-badge">1</span> Choose Board Size</h3>
+              <div class="builder-options-grid grid grid-3-cols gap-medium mt-small">
+                <label class="builder-option-card active">
+                  <input type="radio" name="board-size" value="picnic" checked class="hidden-radio">
+                  <span class="option-title">Picnic Platter</span>
+                  <span class="option-serves">Serves 2-4</span>
+                  <span class="option-price">$75</span>
+                </label>
+                <label class="builder-option-card">
+                  <input type="radio" name="board-size" value="gathering" class="hidden-radio">
+                  <span class="option-title">Gathering Board</span>
+                  <span class="option-serves">Serves 6-10</span>
+                  <span class="option-price">$145</span>
+                </label>
+                <label class="builder-option-card">
+                  <input type="radio" name="board-size" value="grand" class="hidden-radio">
+                  <span class="option-title">Grand Feast</span>
+                  <span class="option-serves">Serves 12-20</span>
+                  <span class="option-price">$280</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Cheeses -->
+            <div class="builder-step mb-medium">
+              <h3 class="step-header">
+                <span class="step-num-badge">2</span> Select Cheeses
+                <span class="step-instructions">(Choose up to 3)</span>
+              </h3>
+              <div class="checkbox-options-list flex flex-column gap-small mt-small">
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-cheese" value="French Brie" checked>
+                    Double Cream French Brie</span>
+                  <span class="option-tag-sm bg-subtle">Creamy</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-cheese" value="Aged Gouda" checked>
+                    24-Month Dutch Gouda</span>
+                  <span class="option-tag-sm bg-subtle">Hard / Sweet</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-cheese" value="Gorgonzola">
+                    Gorgonzola Dolce</span>
+                  <span class="option-tag-sm bg-subtle">Blue / Bold</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-cheese" value="Truffle Pecorino">
+                    Italian Truffle Pecorino</span>
+                  <span class="option-tag-sm bg-subtle">Earthy</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-cheese" value="Goat Cheese"> Herbal
+                    Goat Log</span>
+                  <span class="option-tag-sm bg-subtle">Tangy</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 3: Meats -->
+            <div class="builder-step mb-medium">
+              <h3 class="step-header">
+                <span class="step-num-badge">3</span> Select Cured Meats
+                <span class="step-instructions">(Choose up to 2)</span>
+              </h3>
+              <div class="checkbox-options-list flex flex-column gap-small mt-small">
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-meat" value="Prosciutto di Parma"
+                      checked> Prosciutto di Parma</span>
+                  <span class="option-tag-sm bg-subtle">Salty / Delicate</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-meat" value="Genoa Salami" checked>
+                    Genoa Salami</span>
+                  <span class="option-tag-sm bg-subtle">Garlic Herb</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-meat" value="Spicy Coppa"> Spicy
+                    Cured Coppa</span>
+                  <span class="option-tag-sm bg-subtle">Peppery</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-meat" value="Fennel Salumi"> Fennel
+                    Salumi</span>
+                  <span class="option-tag-sm bg-subtle">Anise Notes</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 4: Accompaniments -->
+            <div class="builder-step">
+              <h3 class="step-header">
+                <span class="step-num-badge">4</span> Accoutrements &amp; Extras
+                <span class="step-instructions">(Choose up to 3)</span>
+              </h3>
+              <div class="checkbox-options-list flex flex-column gap-small mt-small">
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-extra" value="Honeycomb" checked>
+                    Raw Local Honeycomb</span>
+                  <span class="option-tag-sm bg-subtle">Sweet</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-extra" value="Dried Figs" checked>
+                    Organic Dried Black Figs</span>
+                  <span class="option-tag-sm bg-subtle">Chewy</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-extra" value="Candied Pecans"> Sweet
+                    Candied Pecans</span>
+                  <span class="option-tag-sm bg-subtle">Nutty</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-extra" value="Cornichons" checked>
+                    Pickled French Cornichons</span>
+                  <span class="option-tag-sm bg-subtle">Tart / Sour</span>
+                </label>
+                <label class="checkbox-option flex justify-between align-center">
+                  <span class="checkbox-label"><input type="checkbox" name="builder-extra" value="Artisanal Crackers">
+                    Gluten-Free Charcoal Crackers</span>
+                  <span class="option-tag-sm bg-subtle">Crisp</span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Board Preview / Invoice Column -->
+          <div
+            class="builder-preview-panel flex flex-column justify-between p-large rounded-lg border-gold shadow-lg bg-card">
+            <div>
+              <div class="preview-header border-bottom pb-small mb-small">
+                <h3 class="preview-title font-serif text-gold">Custom Curation Order</h3>
+                <p class="text-secondary">Your Real-Time Selection Breakdown</p>
+              </div>
+
+              <!-- Visual Representation of Board (Simple and Elegant UI) -->
+              <div class="board-visualizer-box mb-medium text-center relative rounded-md">
+                <div class="board-wood-base">
+                  <span class="board-engraving font-serif">L'Aura</span>
+                  <!-- Dynamic tags appearing here -->
+                  <div class="board-visual-elements" id="visual-board-elements">
+                    <!-- Javascript will inject mini circles/elements here -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="selection-breakdown mb-medium">
+                <h4 class="mb-xs">Selected Features:</h4>
+                <div class="breakdown-row flex justify-between"><span class="breakdown-label">Size:</span> <span
+                    class="breakdown-val font-bold" id="breakdown-size">Picnic Platter (Serves 2-4)</span></div>
+                <div class="breakdown-row flex justify-between"><span class="breakdown-label">Selected Cheeses:</span>
+                  <span class="breakdown-val text-right" id="breakdown-cheeses">French Brie, Aged Gouda</span></div>
+                <div class="breakdown-row flex justify-between"><span class="breakdown-label">Selected Meats:</span>
+                  <span class="breakdown-val text-right" id="breakdown-meats">Prosciutto di Parma, Genoa Salami</span>
+                </div>
+                <div class="breakdown-row flex justify-between"><span class="breakdown-label">Accompaniments:</span>
+                  <span class="breakdown-val text-right" id="breakdown-extras">Honeycomb, Dried Figs, Cornichons</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pricing-summary-box border-top pt-medium">
+              <div class="price-row flex justify-between mb-xs">
+                <span>Base Price:</span> <span id="price-base">$75.00</span>
+              </div>
+              <div class="price-row flex justify-between mb-xs">
+                <span>Chef Customization Fee:</span> <span id="price-addons">$0.00</span>
+              </div>
+              <div class="price-row flex justify-between mb-small border-bottom pb-xs font-bold text-gold text-lg">
+                <span>Estimated Total:</span> <span id="price-total">$75.00</span>
+              </div>
+
+              <button id="send-to-order-btn" class="btn btn-primary w-full text-center">Book &amp; Finalize This
+                Design</button>
+              <p class="text-center text-secondary text-xs mt-xs">Clicking will export this selection to the booking
+                inquiry sheet.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Corporate & Large-Scale Concierge -->
+      <section class="corporate-services-section py-large bg-subtle">
+        <div class="container grid grid-2-cols gap-large align-center">
+          <div>
+            <span class="section-tag">Brand Experiences</span>
+            <h2 class="section-title">Corporate &amp; Grand Scale Events</h2>
+            <p class="lead">From brand launches to office retreats, we build visual food experiences that leave a
+              lasting impression on clients and teams alike.</p>
+            <p>Our corporate concierge service handles logo engraving on wooden boards, color-coordinated seasonal
+              floral arrangements, and staggered multi-office delivery dropoffs on designated dates.</p>
+            <div class="corporate-list flex flex-column gap-xs pt-small">
+              <div class="flex align-center gap-xs"><i class="fa-solid fa-circle-check text-gold"></i>
+                <span><strong>Custom Branding:</strong> Engrave your business logo on all keepsake boards.</span></div>
+              <div class="flex align-center gap-xs"><i class="fa-solid fa-circle-check text-gold"></i>
+                <span><strong>Multi-Location Delivery:</strong> Synchronized delivery to multiple office
+                  branches.</span></div>
+              <div class="flex align-center gap-xs"><i class="fa-solid fa-circle-check text-gold"></i>
+                <span><strong>Dedicated Planner:</strong> A dedicated corporate accounts manager for easy
+                  billing.</span></div>
+            </div>
+            <a href="#contact" class="btn btn-primary mt-medium">Connect With Corporate Planner</a>
+          </div>
+          <div class="corporate-image-grid grid grid-2-cols gap-xs">
+            <img src="c3.jpg" alt="Corporate setup" class="img-fluid rounded-lg shadow-sm"
+              style="height: 180px; object-fit: cover; width: 100%;">
+            <img src="c10.jpg" alt="Winery corporate catering" class="img-fluid rounded-lg shadow-sm"
+              style="height: 180px; object-fit: cover; width: 100%;">
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES FOOTER -->
+      <footer class="site-footer bg-dark text-white py-medium">
+        <div class="container grid grid-4-cols gap-medium">
+          <div class="footer-col brand-col">
+            <a href="#home-1" class="logo footer-logo mb-small">
+              <span class="logo-icon"><i class="fa-solid fa-cheese"></i></span>
+              <span class="logo-text text-white">L'AURA <span class="logo-sub">GRAZING</span></span>
+            </a>
+            <p class="footer-desc">Curating bespoke cheese, cured meats, and visual feasting tables that serve as the
+              focal point of life's best celebrations.</p>
+            <div class="social-links flex gap-small pt-small">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Explore</h4>
+            <ul>
+              <li><a href="#home-1" class="footer-link">Classic Menu</a></li>
+              <li><a href="#home-2" class="footer-link">Modern Menu</a></li>
+              <li><a href="#about" class="footer-link">Our Story</a></li>
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Contact</h4>
+            <ul>
+              <li><span class="footer-link"><i class="fas fa-phone mr-xs"></i> (555) 349-2910</span></li>
+              <li><span class="footer-link"><i class="fas fa-envelope mr-xs"></i> hello@lauragrazing.com</span></li>
+              <li><span class="footer-link"><i class="fas fa-map-marker-alt mr-xs"></i> 742 Artisanal Way, Suite
+                  100</span></li>
+            </ul>
+          </div>
+          <div class="footer-col hours-col">
+            <h4 class="footer-subtitle">Hours</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+            <p>Sat - Sun: 8:00 AM - 8:00 PM</p>
+            <p class="text-gold italic pt-xs">Catering services available 24/7 with advanced booking.</p>
+          </div>
+        </div>
+        <div
+          class="container border-top pt-medium mt-medium text-center flex justify-between align-center flex-wrap gap-small">
+          <p class="copyright-text">&copy; 2026 L'Aura Grazing. All rights reserved.</p>
+          <p class="designer-text">Crafted with elegance and passion.</p>
+        </div>
+      </footer>
+    </div>
+
+    
+    <!-- ==============================================
+         GALLERY VIEW
+         ============================================== -->
+    <div class="app-view" id="view-gallery">
+      <section class="subpage-hero py-large text-white relative">
+        <div class="subpage-hero-bg"
+          style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('c4.jpg');"></div>
+        <div class="container text-center relative">
+          <span class="section-tag text-gold">Visual Feast</span>
+          <h1 class="hero-title text-white">Our Gallery</h1>
+          <p class="max-w-md margin-auto">Explore our portfolio of bespoke grazing tables, intimate platters, and stunning centerpieces.</p>
+        </div>
+      </section>
+
+      <section class="gallery-section py-large bg-subtle">
+        <div class="container">
+          <div class="gallery-grid">
+            <div class="gallery-item"><img src="c1.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c2.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c3.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c5.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c6.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c7.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c8.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c10.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c11.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c12.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c13.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c14.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c15.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c16.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+            <div class="gallery-item"><img src="c17.jpg" alt="Grazing Setup" class="img-fluid rounded shadow-sm"></div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="site-footer bg-dark text-white py-medium">
+        <div class="container grid grid-4-cols gap-medium">
+          <div class="footer-col brand-col">
+            <a href="#home-1" class="logo footer-logo mb-small">
+              <span class="logo-icon"><i class="fa-solid fa-cheese"></i></span>
+              <span class="logo-text text-white">L'AURA <span class="logo-sub">GRAZING</span></span>
+            </a>
+            <p class="footer-desc">Curating bespoke cheese, cured meats, and visual feasting tables that serve as the
+              focal point of life's best celebrations.</p>
+            <div class="social-links flex gap-small pt-small">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Explore</h4>
+            <ul>
+              <li><a href="#home-2" class="footer-link">Modern Menu</a></li>
+              <li><a href="#about" class="footer-link">Our Story</a></li>
+              <li><a href="#services" class="footer-link">Custom Builder</a></li>
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Contact</h4>
+            <ul>
+              <li><span class="footer-link"><i class="fas fa-phone mr-xs"></i> (555) 349-2910</span></li>
+              <li><span class="footer-link"><i class="fas fa-envelope mr-xs"></i> hello@lauragrazing.com</span></li>
+              <li><span class="footer-link"><i class="fas fa-map-marker-alt mr-xs"></i> 742 Artisanal Way, Suite
+                  100</span></li>
+            </ul>
+          </div>
+          <div class="footer-col hours-col">
+            <h4 class="footer-subtitle">Hours</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+            <p>Sat - Sun: 8:00 AM - 8:00 PM</p>
+            <p class="text-gold italic pt-xs">Catering services available 24/7 with advanced booking.</p>
+          </div>
+        </div>
+        <div
+          class="container border-top pt-medium mt-medium text-center flex justify-between align-center flex-wrap gap-small">
+          <p class="copyright-text">&copy; 2026 L'Aura Grazing. All rights reserved.</p>
+          <p class="designer-text">Crafted with elegance and passion.</p>
+        </div>
+      </footer>
+    </div>
+
+
+    <!-- ==============================================
+         FAQ VIEW
+         ============================================== -->
+    <div class="app-view" id="view-faq">
+      <section class="subpage-hero py-large text-white relative">
+        <div class="subpage-hero-bg"
+          style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('c9.jpg');"></div>
+        <div class="container text-center relative">
+          <span class="section-tag text-gold">Common Inquiries</span>
+          <h1 class="hero-title text-white">Frequently Asked Questions</h1>
+          <p class="max-w-md margin-auto">Everything you need to know about our cheese delivery, shelf life, and setup operations.</p>
+        </div>
+      </section>
+
+      <section class="faq-page-section py-large bg-card">
+        <div class="container max-w-md">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How early do I need to book my catering order?</span>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>For custom boards and standard platters, we recommend ordering at least 48 hours in advance. For large
+                event grazing tables and weddings, please book 2 to 4 weeks in advance to secure your date.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do you handle dietary restrictions and allergies?</span>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>We take food allergies very seriously. We offer gluten-free cracker substitutions, nut-free
+                preparations, and complete vegetarian or vegan/dairy-free boards. Please specify any dietary
+                requirements during your checkout or inquiry call.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How long can the boards sit out at an event?</span>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>For optimal flavor and food safety, we advise that cheese and charcuterie boards sit at room
+                temperature for no more than 2 to 3 hours. Keep them out of direct sunlight and in a cool,
+                air-conditioned room until serving time.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you provide tables and equipment for large events?</span>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>We provide all the necessary food-safe display boards, risers, and decorative elements (like floral arrangements). However, the client is responsible for providing the actual physical table or surface where the grazing station will be built.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is setup included in the price?</span>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>For our Grand Feast tables and large bespoke orders, our on-site setup and styling fee is included. For smaller delivery boxes and individual platters, there is a delivery fee based on mileage.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I customize the cheeses and meats?</span>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! While we have expertly curated combinations, you can use our Interactive Board Builder to select specific cheeses, cured meats, and accoutrements to perfectly match your preferences.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer bg-dark text-white py-medium">
+        <div class="container grid grid-4-cols gap-medium">
+          <div class="footer-col brand-col">
+            <a href="#home-1" class="logo footer-logo mb-small">
+              <span class="logo-icon"><i class="fa-solid fa-cheese"></i></span>
+              <span class="logo-text text-white">L'AURA <span class="logo-sub">GRAZING</span></span>
+            </a>
+            <p class="footer-desc">Curating bespoke cheese, cured meats, and visual feasting tables that serve as the
+              focal point of life's best celebrations.</p>
+            <div class="social-links flex gap-small pt-small">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Explore</h4>
+            <ul>
+              <li><a href="#home-2" class="footer-link">Modern Menu</a></li>
+              <li><a href="#about" class="footer-link">Our Story</a></li>
+              <li><a href="#services" class="footer-link">Custom Builder</a></li>
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Contact</h4>
+            <ul>
+              <li><span class="footer-link"><i class="fas fa-phone mr-xs"></i> (555) 349-2910</span></li>
+              <li><span class="footer-link"><i class="fas fa-envelope mr-xs"></i> hello@lauragrazing.com</span></li>
+              <li><span class="footer-link"><i class="fas fa-map-marker-alt mr-xs"></i> 742 Artisanal Way, Suite
+                  100</span></li>
+            </ul>
+          </div>
+          <div class="footer-col hours-col">
+            <h4 class="footer-subtitle">Hours</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+            <p>Sat - Sun: 8:00 AM - 8:00 PM</p>
+            <p class="text-gold italic pt-xs">Catering services available 24/7 with advanced booking.</p>
+          </div>
+        </div>
+        <div
+          class="container border-top pt-medium mt-medium text-center flex justify-between align-center flex-wrap gap-small">
+          <p class="copyright-text">&copy; 2026 L'Aura Grazing. All rights reserved.</p>
+          <p class="designer-text">Crafted with elegance and passion.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ==============================================
+         CONTACT & BOOKING VIEW
+         ============================================== -->
+    <div class="app-view" id="view-contact">
+      <!-- Contact Hero -->
+      <section class="subpage-hero py-large text-white relative">
+        <div class="subpage-hero-bg"
+          style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)), url('c17.jpg');"></div>
+        <div class="container text-center relative">
+          <span class="section-tag text-gold">Reserve Your Date</span>
+          <h1 class="hero-title text-white">Contact Us &amp; Booking Inquiry</h1>
+          <p class="max-w-md margin-auto">Tell us about your celebration, and let us build an extraordinary culinary
+            landscape for your guests.</p>
+        </div>
+      </section>
+
+      <!-- Booking Form & Info Section -->
+      <section class="contact-details-section py-large">
+        <div class="container grid grid-2-cols gap-large">
+
+          <!-- Booking Request Form -->
+          <div class="contact-form-panel p-large bg-card border-gold rounded-lg shadow-md">
+            <h2 class="mb-xs">Catering Inquiry Sheet</h2>
+            <p class="text-secondary mb-medium">Fill in the fields below. Our events manager will review and email you a
+              tailored proposal within 24 hours.</p>
+
+            <form id="main-booking-form" class="flex flex-column gap-small">
+              <div class="form-row grid grid-2-cols gap-xs">
+                <div class="form-group flex flex-column">
+                  <label for="c-name" class="form-label">Full Name *</label>
+                  <input type="text" id="c-name" required class="form-input" placeholder="Eleanor Vance">
+                </div>
+                <div class="form-group flex flex-column">
+                  <label for="c-email" class="form-label">Email Address *</label>
+                  <input type="email" id="c-email" required class="form-input" placeholder="eleanor@example.com">
+                </div>
+              </div>
+
+              <div class="form-row grid grid-2-cols gap-xs">
+                <div class="form-group flex flex-column">
+                  <label for="c-phone" class="form-label">Phone Number</label>
+                  <input type="tel" id="c-phone" class="form-input" placeholder="(555) 349-2910">
+                </div>
+                <div class="form-group flex flex-column">
+                  <label for="c-event-date" class="form-label">Event Date *</label>
+                  <input type="date" id="c-event-date" required class="form-input">
+                </div>
+              </div>
+
+              <div class="form-row grid grid-2-cols gap-xs">
+                <div class="form-group flex flex-column">
+                  <label for="c-guests" class="form-label">Estimated Guest Count *</label>
+                  <select id="c-guests" required class="form-input">
+                    <option value="" disabled selected>Select size</option>
+                    <option value="1-10">Intimate (Under 10)</option>
+                    <option value="10-30">Party (10 to 30)</option>
+                    <option value="30-70">Gathering (30 to 70)</option>
+                    <option value="70-150">Large Reception (70 to 150)</option>
+                    <option value="150+">Grand Feast (150+)</option>
+                  </select>
+                </div>
+                <div class="form-group flex flex-column">
+                  <label for="c-service-type" class="form-label">Desired Service *</label>
+                  <select id="c-service-type" required class="form-input">
+                    <option value="" disabled selected>Select service</option>
+                    <option value="board-delivery">Signature Board Delivery</option>
+                    <option value="grazing-table">On-Site Grazing Table Setup</option>
+                    <option value="styling-workshop">Private Board Styling Workshop</option>
+                    <option value="custom-builder">Custom Builder Selection (Specified Below)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group flex flex-column" id="custom-builder-note-group" style="display: none;">
+                <label class="form-label text-gold font-bold">Imported Custom Builder Specifications:</label>
+                <div class="builder-note-box p-xs bg-subtle rounded border-gold font-mono text-sm">
+                  <span id="c-builder-spec">No builder data imported yet. You can build a custom board in the Services
+                    tab first.</span>
+                </div>
+              </div>
+
+              <div class="form-group flex flex-column">
+                <label for="c-notes" class="form-label">Event Styling Details &amp; Dietary Restrictions</label>
+                <textarea id="c-notes" rows="4" class="form-input text-area"
+                  placeholder="Describe the style/vibe you want, flower color themes, or any allergies (e.g., gluten-free, nut allergy)..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full mt-xs">Submit Booking Request</button>
+            </form>
+            <div id="booking-success-alert" class="text-green font-bold mt-small text-center">Your booking request has
+              been submitted successfully! We will contact you soon.</div>
+          </div>
+
+          <!-- Contact Details and mock map -->
+          <div class="contact-info-panel flex flex-column justify-between">
+            <div class="info-details-box p-large bg-card border-gold rounded-lg shadow-sm mb-medium">
+              <h3 class="mb-small text-gold">Get In Touch</h3>
+              <div class="info-rows flex flex-column gap-medium">
+                <div class="info-row flex align-center gap-small">
+                  <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
+                  <div>
+                    <strong>Headquarters Location:</strong>
+                    <p>742 Artisanal Way, Suite 100, Gastronomy Heights</p>
+                  </div>
+                </div>
+                <div class="info-row flex align-center gap-small">
+                  <span class="info-icon"><i class="fas fa-phone-alt"></i></span>
+                  <div>
+                    <strong>Give Us A Ring:</strong>
+                    <p>(555) 349-2910</p>
+                  </div>
+                </div>
+                <div class="info-row flex align-center gap-small">
+                  <span class="info-icon"><i class="fas fa-envelope"></i></span>
+                  <div>
+                    <strong>Inquiry &amp; Support Mail:</strong>
+                    <p>hello@lauragrazing.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Leaflet Map Container -->
+            <div class="leaflet-map-wrapper relative flex flex-column gap-xs flex-grow">
+              <div id="real-leaflet-map" style="width: 100%; height: 320px; z-index: 10;"
+                class="rounded-lg shadow-sm border-gold"></div>
+              <div class="map-directions-bar p-small bg-card rounded-md border-gold flex justify-between align-center">
+                <span class="text-sm text-secondary"><i class="fas fa-map-marker-alt text-gold mr-xs"></i> 742 Artisanal
+                  Way, Gastronomy Heights</span>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=37.7749,-122.4194" target="_blank"
+                  rel="noopener noreferrer" class="btn btn-sm btn-primary">Get Directions</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 3: Delivery Zones -->
+      <section class="delivery-zones-section py-large bg-subtle">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">Logistics</span>
+          <h2 class="section-title">Delivery Zones &amp; Setups</h2>
+          <p>We deliver and style events across the region. Review our shipping, setup, and teardown zones below.</p>
+        </div>
+        <div class="container grid grid-3-cols gap-medium">
+          <div class="zone-card p-medium bg-card rounded-lg shadow-sm border-gold">
+            <h4 class="text-gold mb-xs"><i class="fa-solid fa-circle-dot mr-xs"></i> Zone 1 (0-15 miles)</h4>
+            <p class="text-xs mb-small">Gastronomy Heights &amp; Downtown districts.</p>
+            <span class="text-sm font-bold">Delivery Fee: Free</span>
+          </div>
+          <div class="zone-card p-medium bg-card rounded-lg shadow-sm border-gold">
+            <h4 class="text-gold mb-xs"><i class="fa-solid fa-circle-dot mr-xs"></i> Zone 2 (15-30 miles)</h4>
+            <p class="text-xs mb-small">Suburban residential valleys and winery regions.</p>
+            <span class="text-sm font-bold">Delivery Fee: $45</span>
+          </div>
+          <div class="zone-card p-medium bg-card rounded-lg shadow-sm border-gold">
+            <h4 class="text-gold mb-xs"><i class="fa-solid fa-circle-dot mr-xs"></i> Zone 3 (30-50 miles)</h4>
+            <p class="text-xs mb-small">Outer lakes, mountain resorts, and remote estates.</p>
+            <span class="text-sm font-bold">Delivery Fee: $95</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Highlights Gallery REMOVED per brief - contact page should only show contact-related content -->
+
+      <!-- Section 5: Preparation Checklist (Redesigned as Interactive Checkable Cards) -->
+      <section class="styling-checklist-section py-large bg-subtle">
+        <div class="container text-center max-w-lg mb-large">
+          <span class="section-tag text-gold">Catering Prep</span>
+          <h2 class="section-title">Your Grazing Prep Checklist</h2>
+          <p>Click on each step below to mark it off as you complete your preparations.</p>
+        </div>
+        <div class="container grid grid-3-cols gap-medium">
+          <!-- Card 1 -->
+          <label
+            class="checklist-card bg-card p-medium rounded-lg border-gold shadow-sm relative cursor-pointer flex flex-column gap-small">
+            <input type="checkbox" class="checklist-hidden-cb" style="display:none;">
+            <div class="checklist-card-header flex justify-between align-center">
+              <span class="step-num text-xs uppercase tracking-wider text-gold font-bold">Step 01</span>
+              <span class="checklist-marker"><i class="fa-regular fa-circle text-gold text-lg"></i></span>
+            </div>
+            <div class="checklist-card-body">
+              <h3 class="mb-xs font-serif text-gold">Secure Table &amp; Shade</h3>
+              <p class="text-sm text-secondary">Ensure tables are in a cooled room or complete outdoor shade. High
+                temperatures melt cheese and charcuterie within minutes.</p>
+            </div>
+          </label>
+          <!-- Card 2 -->
+          <label
+            class="checklist-card bg-card p-medium rounded-lg border-gold shadow-sm relative cursor-pointer flex flex-column gap-small">
+            <input type="checkbox" class="checklist-hidden-cb" style="display:none;">
+            <div class="checklist-card-header flex justify-between align-center">
+              <span class="step-num text-xs uppercase tracking-wider text-gold font-bold">Step 02</span>
+              <span class="checklist-marker"><i class="fa-regular fa-circle text-gold text-lg"></i></span>
+            </div>
+            <div class="checklist-card-body">
+              <h3 class="mb-xs font-serif text-gold">Dietary Preferences</h3>
+              <p class="text-sm text-secondary">Gather final guest food allergy lists and gluten-free/vegan demands.
+                Send details to our manager 72 hours before delivery.</p>
+            </div>
+          </label>
+          <!-- Card 3 -->
+          <label
+            class="checklist-card bg-card p-medium rounded-lg border-gold shadow-sm relative cursor-pointer flex flex-column gap-small">
+            <input type="checkbox" class="checklist-hidden-cb" style="display:none;">
+            <div class="checklist-card-header flex justify-between align-center">
+              <span class="step-num text-xs uppercase tracking-wider text-gold font-bold">Step 03</span>
+              <span class="checklist-marker"><i class="fa-regular fa-circle text-gold text-lg"></i></span>
+            </div>
+            <div class="checklist-card-body">
+              <h3 class="mb-xs font-serif text-gold">Monger Arrival</h3>
+              <p class="text-sm text-secondary">Our styling team will arrive exactly 2 hours prior to serving. Please
+                ensure the designated table setup area is fully cleared and ready.</p>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- CONTACT FOOTER -->
+      <footer class="site-footer bg-dark text-white py-medium">
+        <div class="container grid grid-4-cols gap-medium">
+          <div class="footer-col brand-col">
+            <a href="#home-1" class="logo footer-logo mb-small">
+              <span class="logo-icon"><i class="fa-solid fa-cheese"></i></span>
+              <span class="logo-text text-white">L'AURA <span class="logo-sub">GRAZING</span></span>
+            </a>
+            <p class="footer-desc">Curating bespoke cheese, cured meats, and visual feasting tables that serve as the
+              focal point of life's best celebrations.</p>
+            <div class="social-links flex gap-small pt-small">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Explore</h4>
+            <ul>
+              <li><a href="#home-1" class="footer-link">Classic Menu</a></li>
+              <li><a href="#home-2" class="footer-link">Modern Menu</a></li>
+              <li><a href="#about" class="footer-link">Our Story</a></li>
+              <li><a href="#services" class="footer-link">Custom Builder</a></li>
+            </ul>
+          </div>
+          <div class="footer-col links-col">
+            <h4 class="footer-subtitle">Contact</h4>
+            <ul>
+              <li><span class="footer-link"><i class="fas fa-phone mr-xs"></i> (555) 349-2910</span></li>
+              <li><span class="footer-link"><i class="fas fa-envelope mr-xs"></i> hello@lauragrazing.com</span></li>
+              <li><span class="footer-link"><i class="fas fa-map-marker-alt mr-xs"></i> 742 Artisanal Way, Suite
+                  100</span></li>
+            </ul>
+          </div>
+          <div class="footer-col hours-col">
+            <h4 class="footer-subtitle">Hours</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+            <p>Sat - Sun: 8:00 AM - 8:00 PM</p>
+            <p class="text-gold italic pt-xs">Catering services available 24/7 with advanced booking.</p>
+          </div>
+        </div>
+        <div
+          class="container border-top pt-medium mt-medium text-center flex justify-between align-center flex-wrap gap-small">
+          <p class="copyright-text">&copy; 2026 L'Aura Grazing. All rights reserved.</p>
+          <p class="designer-text">Crafted with elegance and passion.</p>
+        </div>
+      </footer>
+    </div>
+
+  </main>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
