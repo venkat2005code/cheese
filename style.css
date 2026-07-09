@@ -285,6 +285,17 @@ p.lead {
 }
 
 /* Spacings */
+.p-small {
+  padding: 1.5rem;
+}
+
+.p-medium {
+  padding: 2rem;
+}
+
+.p-large {
+  padding: 3.5rem;
+}
 .py-medium {
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
