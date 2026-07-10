@@ -419,7 +419,8 @@ p.lead {
 
 .btn-primary-light {
   background-color: var(--accent-gold);
-  color: #ffffff !important;
+  color: #110c09 !important;
+  font-weight: 700;
 }
 
 .btn-primary-light:hover {
@@ -660,9 +661,9 @@ body.dark-theme .mobile-toggle-btn .bar {
   left: 50%;
   transform: translateX(-50%) translateY(15px);
   background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--accent-gold);
   border-radius: var(--border-radius-sm);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   padding: 0.75rem 0;
   min-width: 230px;
   list-style: none;
@@ -687,6 +688,11 @@ body.dark-theme .mobile-toggle-btn .bar {
 }
 
 /* Show dropdown on hover */
+body.dark-theme .dropdown-menu {
+  background-color: #231b17;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 15px rgba(194, 139, 56, 0.15);
+}
+
 .nav-item.dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
@@ -1338,6 +1344,7 @@ body.dark-theme .theme-icon-light {
 .success-message {
   display: none;
   font-weight: 600;
+  color: #4caf50 !important;
 }
 
 .success-message.active {
@@ -2723,11 +2730,7 @@ html[dir="rtl"] {
     display: flex !important;
   }
 
-  /* Hide Desktop Action Buttons on mobile/tablet */
-  #theme-toggle,
-  #rtl-toggle {
-    display: none !important;
-  }
+  /* Desktop action buttons hidden logic removed as they are part of nav-list now */
 
   /* Show Mobile Actions Menu Inside Drawer */
   .mobile-menu-actions {
